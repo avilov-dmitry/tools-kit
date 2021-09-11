@@ -1,0 +1,30 @@
+# ides
+.idea
+.vscode
+
+# envs
+.env
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# .MD
+*.md
+
+# folders
+node_modules
+
+# files
+.babelrc
+.eslintignore
+.eslintrc.js
+.gitignore
+.npmignore
+package-lock.json
+tsconfig.json
+webpack.config.ts
+
+# unknown
+.DS_Store

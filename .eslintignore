@@ -1,0 +1,20 @@
+# ides
+.idea
+.vscode
+
+# envs
+.env
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# folders
+configs
+lib
+node_modules
+scripts
+
+# unknown
+.DS_Store
