@@ -2,7 +2,7 @@ import { ApiServiceObject, RequestMethod } from './_types';
 import { checkStatusCode, getUrl } from './_utils';
 
 type ApiServiceConstructorType = {
-    headers: HeadersInit;
+    headers?: HeadersInit;
 };
 
 type RequestParamsType = {
@@ -19,12 +19,12 @@ type SendRequestParamsType = RequestParamsType & {
 };
 
 export class ApiService {
-    headers: HeadersInit;
+    headers?: HeadersInit;
 
     constructor(params: ApiServiceConstructorType) {
         const { headers } = params;
 
-        this.headers = headers;
+        this.headers = headers || {};
     }
 
     public getRequest(params: RequestParamsType): void {
@@ -45,6 +45,13 @@ export class ApiService {
 
     public deleteRequest(params: RequestParamsType): void {
         this.sendRequest({ ...params, method: RequestMethod.delete });
+    }
+
+    public setToken(token: string): void {
+        this.headers = {
+            ...this.headers,
+            'Authorization': token
+        }
     }
 
     protected sendRequest(params: SendRequestParamsType): Promise<void> {
